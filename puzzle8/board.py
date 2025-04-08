@@ -67,6 +67,7 @@ class Board:
                 a, b = self.board[j], self.board[i]
                 if a != 0 and b != 0 and a > b:
                     count += 1
+        print("Anzahl der Inversionen:", count)
         return count % 2 == 0
 
 
