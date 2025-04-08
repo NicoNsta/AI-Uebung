@@ -16,6 +16,9 @@ def main():
 
     # Beispiel mit festem Board (wie im Aufgabenblatt)
     board = Board([7, 2, 4, 5, 0, 6, 8, 3, 1])
+    # board = Board([2, 8, 1, 6, 7, 3, 5, 4, 0])
+    # board = Board([6, 3, 7, 8, 4, 5, 2, 1, 0])
+    # board = Board([9, 0, 7, 8, 5, 3, 6, 1, 2, 4])
 
     print("Startzustand:", board)
     print("Lösbar (Parität)?", board.parity())
@@ -24,20 +27,22 @@ def main():
 
     # --- A* ---
     print("\n--- A* Suche ---")
-    a_star_result = a_star(board)
+    a_star_result, anz_knoten = a_star(board)
     if a_star_result is None:
         print("Keine Lösung gefunden.")
     else:
         print(f"Züge: {len(a_star_result) - 1}")
+        print(f"Besuchte Knoten: {anz_knoten}")
         [print(step) for step in a_star_result]
 
     # --- IDFS ---
     print("\n--- IDFS Suche ---")
-    idfs_result = idfs(board)
+    idfs_result, visited_result = idfs(board)
     if idfs_result is None:
         print("Keine Lösung gefunden.")
     else:
         print(f"Züge: {len(idfs_result) - 1}")
+        print(f"Besuchte Knoten: {visited_result}")
         [print(step) for step in idfs_result]
 
 

@@ -61,18 +61,13 @@ class Board:
         Gibt True zurück, wenn das Board lösbar ist.
         TODO: Implementiere die Berechnung der Parität
         """
-        # Erstelle eine Liste ohne das leere Feld (0)
-        tiles = [tile for tile in self.board if tile != 0] 
-
-        # Zähle die Anzahl der falschen Paare
-        count = 0 
-        for y in range(len(tiles)):
-            for x in range(y):
-                if tiles[x] > tiles[y]: 
-                    count += 1 
-
-        # Rückgabe: True bei gerader Parität, False bei ungerader
-        return count % 2 == 0 
+        count = 0
+        for i in range(len(self.board)):
+            for j in range(i):
+                a, b = self.board[j], self.board[i]
+                if a != 0 and b != 0 and a > b:
+                    count += 1
+        return count % 2 == 0
 
 
     def h1(self):
@@ -83,7 +78,7 @@ class Board:
         count = 0
         for i, tile in enumerate(self.board):
             if tile == 0:
-                continue # Ohne 0
+                continue
             if tile != i:
                 count += 1
         return count
@@ -99,8 +94,8 @@ class Board:
         for i, tile in enumerate(self.board):
             if tile == 0:
                 continue
-            goal_index = tile  # weil tile soll auf Index tile stehen
-            x1, y1 = i % 3, i // 3 # i % 3 gibt die Spalte, i // 3 die Zeile
+            goal_index = tile  # tile soll auf Index tile stehen
+            x1, y1 = i % 3, i // 3 # x1 = Spalte, y1 = Zeile
             x2, y2 = goal_index % 3, goal_index // 3 # Zielposition
             dist += abs(x1 - x2) + abs(y1 - y2) # Manhattan-Distanz --> Anzahl der Schritte
         return dist

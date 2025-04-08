@@ -9,6 +9,8 @@ from collections import deque
 from board import Board
 from typing import Optional
 
+coun_a_star = 0
+
 
 class Node:
     """
@@ -72,7 +74,7 @@ def a_star(start_board: Board) -> Optional[deque[Board]]:
         # Überprüfe, ob das aktuelle Board das Ziel erreicht hat.
         # Wenn ja, gebe den Pfad zurück.
         if current_board.is_solved():
-            return reconstruct_path(current_node)
+            return reconstruct_path(current_node), len(closed_list)
 
         # Füge den aktuellen Knoten zur closed_list hinzu.
         # closed_list ist ein Set, um doppelte Boards zu vermeiden.

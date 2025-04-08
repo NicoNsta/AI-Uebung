@@ -5,6 +5,7 @@ Aufgabe:
 Welche Parität hat der Zustand S in Abb. 1?
 
 Lösung:
+Gerade Parität
 
 Notizen:
 Die Anzahl der Inversionen (Inversionen addiert) bestimmt die Parität des Zustands.
@@ -21,8 +22,6 @@ Zielzustand. In Abb. 1 ist h1(S) = 8. Wieso ist h1 eine monotone Heuristik?
 Lösung:
 Bedingung: h(n) ≤ 1 + h(n′) ist immer erfüllt, da sich h1 nur um maximal 1 Ändern kann. 
 
-Notizen: 
-h₁(z) ist die Anzahl der falsch platzierten Steine in einem Zustand zz
 
 
 b)
@@ -32,10 +31,10 @@ Zielpositionen. In Abb. 1 ist h2(S) = 3 + 1 + 2 + 2 + 2 + 3 + 3 + 2 = 18. Wieso 
 monotone Heuristik?
 
 Lösung:
-h₂ ist monoton, weil sich h₂ bei einem einzelnen Zug nur um höchstens 1 verringern kann.
+h₂ ist monoton, weil sich h₂ bei einem einzelnen Zug nur um höchstens 1 verändern kann.
 
 Notizen: 
-Manhattan-Distanzen sind die Distanzen vom Falschen bis zum richtigen Feld (in diesem Beispiel) 
+Manhattan-Distanzen sind die Distanzen vom Falschen bis zum richtigen Feld
 h₂(z) ist die Summe aller Manhattan-Distanzen der Steine von ihrer Zielposition.
 
 c)
@@ -47,6 +46,6 @@ h1 zählt nur ob ein Stein Richtig oder Falsch ist (Max 8).
 h2 zählt wie weit ein Stein vom Ziel weg ist (oft mehr als 1)
 Daher: h2 >= h1.
 
-h2 Scheint mir die bessere Wahl, da es mehr Daten hat.
+h2 Scheint mir die bessere Wahl, da es mehr informationen hat.
 
 
