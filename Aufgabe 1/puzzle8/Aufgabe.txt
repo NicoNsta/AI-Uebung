@@ -1,0 +1,53 @@
+Aufgabe 1
+
+a)
+Aufgabe:
+Welche Parität hat der Zustand S in Abb. 1?
+
+Lösung:
+Grader Zustand
+
+Notizen:
+Die Anzahl der Inversionen (Inversionen addiert) bestimmt die Parität des Zustands.
+Inversion: Anzahl, wie oft eine größere Zahl vor einer kleineren Zahl steht, z.B. 7 --> Inversionen, oder 5 --> 2.
+
+
+Aufgabe 2 
+
+a)
+Aufgabe:
+Für einen Zustand z ist h1(z) die Anzahl der falsch platzierten Steine in Bezug auf den
+Zielzustand. In Abb. 1 ist h1(S) = 8. Wieso ist h1 eine monotone Heuristik?
+
+Lösung:
+Bedingung: h(n) ≤ 1 + h(n′) ist immer erfüllt, da sich h1 nur um maximal 1 Ändern kann. 
+
+Notizen: 
+h₁(z) ist die Anzahl der falsch platzierten Steine in einem Zustand zz
+
+
+b)
+Aufgabe:
+Für einen Zustand z ist h2(z) die Summe der Manhattan-Distanzen der Steine von ihren
+Zielpositionen. In Abb. 1 ist h2(S) = 3 + 1 + 2 + 2 + 2 + 3 + 3 + 2 = 18. Wieso ist h2 eine
+monotone Heuristik?
+
+Lösung:
+h₂ ist monoton, weil sich h₂ bei einem einzelnen Zug nur um höchstens 1 verringern kann.
+
+Notizen: 
+Manhattan-Distanzen sind die Distanzen vom Falschen bis zum richtigen Feld (in diesem Beispiel) 
+h₂(z) ist die Summe aller Manhattan-Distanzen der Steine von ihrer Zielposition.
+
+c)
+Aufgabe:
+Wieso ist h1(n) ≤ h2(n)? Welche Heuristik ist also besser?
+
+Lösung:
+h1 zählt nur ob ein Stein Richtig oder Falsch ist (Max 8).
+h2 zählt wie weit ein Stein vom Ziel weg ist (oft mehr als 1)
+Daher: h2 >= h1.
+
+h2 Scheint mir die bessere Wahl, da es mehr Daten hat.
+
+
