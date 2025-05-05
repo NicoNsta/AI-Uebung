@@ -158,9 +158,9 @@ public class Kalah {
      
     public static int evaluate(KalahBoard b) {
         int score = b.getAKalah() - b.getBKalah();
-        if (b.isBonus()) score += 1000;
+        if (b.isBonus()) score += 10;
         return score;
-    }
+    } 
 
 
     public static List<KalahBoard> sortedActions(KalahBoard board) {
