@@ -40,7 +40,7 @@ class BundeslaenderGraphMitHintergrund:
 
     def _add_states(self):
         self.bundeslaender = [
-            "SH", "HA", "MV", "NI", "BM", "BB", "BE", "ST",
+            "SH", "HA", "MV", "NI", "BM", "BB", "BE", "SA",
             "SN", "TH", "HE", "NW", "RP", "SL", "BW", "BY"
         ]
         self.G.add_nodes_from(self.bundeslaender)
@@ -50,16 +50,16 @@ class BundeslaenderGraphMitHintergrund:
             ("SH", "HA"), ("SH", "NI"),
             ("HA", "NI"),
             ("MV", "BB"),
-            ("NI", "BM"), ("NI", "ST"), ("NI", "HE"), ("NI", "NW"), ("NI", "TH"),
+            ("NI", "BM"), ("NI", "SA"), ("NI", "HE"), ("NI", "NW"), ("NI", "TH"),
             ("BM", "NI"),
-            ("BB", "BE"), ("BB", "ST"), ("BB", "SN"),
-            ("ST", "SN"), ("ST", "TH"),
+            ("BB", "BE"), ("BB", "SA"), ("BB", "SN"),
+            ("SA", "SN"), ("SA", "TH"),
             ("SN", "TH"), ("SN", "BY"),
             ("TH", "HE"), ("TH", "BY"),
             ("HE", "NW"), ("HE", "RP"), ("HE", "BY"),
             ("NW", "RP"),
             ("RP", "SL"), ("RP", "BW"),
-            ("BW", "BY")
+            ("BW", "BY"), ("BW", "HE"),
         ]
         self.G.add_edges_from(self.borders)
 
@@ -76,7 +76,7 @@ class BundeslaenderGraphMitHintergrund:
             "BY": (0.60, 0.25),
             "BB": (0.79, 0.62),
             "BE": (0.72, 0.68),
-            "ST": (0.59, 0.60),
+            "SA": (0.59, 0.60),
             "SN": (0.73, 0.49),
             "TH": (0.54, 0.47),
             "HE": (0.40, 0.45),
