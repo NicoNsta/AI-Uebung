@@ -45,7 +45,7 @@ class TitanicNN:
         )
         self.model = model
 
-    def train(self, epochs=50, batch_size=32):
+    def train(self, epochs=50, batch_size=64):
         # Training mit Validierungsdaten
         self.history = self.model.fit(
             self.X_train, self.y_train,
