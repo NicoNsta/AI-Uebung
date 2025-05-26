@@ -36,4 +36,4 @@ output = pd.DataFrame({
     'Survived':    pred_survived
 })
 output.to_csv('ki-main/titanic/output/b)-submission.csv', index=False)
-print("Your submission was successfully saved!") # b) Submission-DataFrame erzeugen und als CSV speichern
+print("Your submission was successfully saved!")

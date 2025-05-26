@@ -38,4 +38,4 @@ rf = RandomForestClassifier(random_state=42)
 rf.fit(X_train, y_train)
 pred_rf = rf.predict(X_val)
 acc_rf  = accuracy_score(y_val, pred_rf)
-print(f"Accuracy des Random Forest    : {acc_rf:.4f}") # b) Submission-DataFrame erzeugen und als CSV speichern
+print(f"Accuracy des Random Forest    : {acc_rf:.4f}")
