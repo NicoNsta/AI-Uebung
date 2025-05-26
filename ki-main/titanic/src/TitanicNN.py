@@ -18,7 +18,7 @@ class TitanicNN:
         val_df["Age"]   = val_df["Age"].fillna(median_age)
         
         # Features auswählen und Dummy-Kodierung (drop_first=True)
-        features = ["Pclass", "Sex", "Age"]
+        features = ["Pclass", "Sex", "Age", "Cabin", "Embarked"]
         self.X_train = pd.get_dummies(train_df[features], drop_first=True)
         self.X_val   = pd.get_dummies(val_df  [features], drop_first=True)
         # Spalten angleichen
@@ -45,7 +45,7 @@ class TitanicNN:
         )
         self.model = model
 
-    def train(self, epochs=50, batch_size=64):
+    def train(self, epochs, batch_size=32):
         # Training mit Validierungsdaten
         self.history = self.model.fit(
             self.X_train, self.y_train,
@@ -69,5 +69,11 @@ class TitanicNN:
 if __name__ == "__main__":
     nn = TitanicNN('ki-main/titanic/data/train.csv')
     nn.build_model()
-    nn.train(epochs=50)
+    nn.train(epochs=100)
+
+    # --- neu: Accuracy auf dem Validierungsset ausgeben ---
+    loss_val, acc_val = nn.model.evaluate(nn.X_val, nn.y_val)
+    print(f"Finale Validierungs-Accuracy: {acc_val:.4f}")
+
     nn.plot_loss()
+

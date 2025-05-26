@@ -6,7 +6,6 @@ from sklearn.metrics import accuracy_score
 
 # 1) Daten einlesen
 train_data = pd.read_csv('ki-main/titanic/data/train.csv')
-test_data  = pd.read_csv('ki-main/titanic/data/test.csv')
 
 # 2) 80/20 Split
 train_df, val_df = train_test_split(train_data, test_size=0.2, random_state=42)
