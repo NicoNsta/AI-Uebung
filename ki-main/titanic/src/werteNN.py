@@ -12,7 +12,7 @@ combos = [
     (1e-4, 64),
 ]
 repeats = 10
-epochs = 50
+epochs = 100
 
 # 2) Ergebnisse speichern
 results = {}
